@@ -144,6 +144,14 @@ span img{
   font-size: 15px;
 }
 
+.header1 h3{
+  color:  #e32e2e;
+  text-align: center;
+  padding: 2.5px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
 .chat-incoming{
   word-break: keep-all;
   height: fit-content;
@@ -180,4 +188,116 @@ span img{
   color: #00ADB5; 
   overflow:auto;
   z-index: 1;
+}
+
+.demo-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px 20px;
+  background-color: #00ADB5;
+  color: #EEEEEE;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.demo-btn:hover {
+  background-color: #393E46;
+}
+
+/* Demo chat input container at the bottom of the demo page */
+.demoChatInput {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background-color: #393E46;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.demoChatInput label {
+  color: #EEEEEE;
+  font-weight: 700;
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+.demoChatInput select {
+  padding: 10px;
+  background-color: #00ADB5;
+  color: #222831;
+  border: 2px solid #EEEEEE;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  width: 250px;
+  text-align: center;
+}
+
+.demoChatInput select option {
+  color: #222831;
+  background-color: #EEEEEE;
+}
+
+/* Demo send button styling */
+.demo-send-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #00ADB5;
+  margin-left: 10px;
+  width: 60px;  /* Updated width */
+  height: 60px; /* Updated height */
+  border-radius: 50%;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.demo-send-btn img {
+  width: 45px;
+  height: 45px;
+}
+
+/* Back to Main button */
+.back-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px 20px;
+  background-color: #00ADB5;
+  color: #EEEEEE;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.back-btn:hover {
+  background-color: #393E46;
+}
+
+/* Send button for demo chat input */
+.send-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #00ADB5;
+  margin-left: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.send-btn img {
+  width: 20px;
+  height: 20px;
 }

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" constant="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>E.D.I.T.H</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="demo.js" defer></script>
+        <link rel="icon" href="#">
+    </head>
+    <body>
+        <img class="bckimg-1"  src="Images/Background1.jpg">
+        <img class="bckimg-2"  src="Images/Background2.jpg">
+
+        <div class="chatbot">
+
+            <div class="header1">
+                <h1>E.D.I.T.H</h1>
+                <h2>(Even Dead, I'm The Hero)</h2>
+                <h3>This is a demo version of the website</h3>
+                <button onclick="window.location.href='index.html'" class="back-btn">Back to Main</button>
+            </div>
+            <div class="box">
+                <ul class="chatbox">
+                    <li class="chat-incoming">
+                        <p><div class="highlight">Welcome to E.D.I.T.H! </div>Ready to assist and chat. Ask anything, and let's make your experience enjoyable! 🤖✨</p>
+                    </li>
+                </ul> 
+            </div>
+
+            <div class="demoChatInput">
+                <label for="demoQuestions">Select a question:</label>
+                <select id="demoQuestions">
+                    <option value="" disabled selected>Choose a question...</option>
+                    <option value="What can you do?">What can you do?</option>
+                    <option value="How does time travel work?">How does time travel work?</option>
+                    <option value="Tell me something interesting about AI">Tell me something interesting about AI</option>
+                    <option value="What is the future of technology?">What is the future of technology?</option>
+                    <option value="Can you tell me a fun fact?">Can you tell me a fun fact?</option>
+                    <option value="Why is climate change important?">Why is climate change important?</option>
+                </select>                
+                <div class="demo-send-btn" onclick="sendDemoQuestion()">
+                    <img src="Images/send arrow.webp" alt="Send">
+                </div>
+            </div>
+            
+        </div>
+
+
+    </body>
+</html>

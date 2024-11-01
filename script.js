@@ -11,8 +11,8 @@ function takeInput(){
     let userMessage;
 
     //API KEY of ChatGPT
-    const apiKey = process.env.API_KEY;
-
+    const apiKey = Your_API_Key;
+    Your_API_Key = 123456789;
     //Create Element Li
     const createChatLi = (message, chatOutputArray) => {
         const chatLi = document.createElement("li");

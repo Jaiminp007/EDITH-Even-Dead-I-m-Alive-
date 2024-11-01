@@ -1,8 +1,4 @@
-
-//Function connected to HTML
-function takeInput(){
-
-    //Dom element
+function takeInput() {
     const chatInput = document.querySelector(".chatInput textarea");
     const chatbox = document.querySelector(".chatbox");
     const sendChatBtn = document.querySelector(".chatInput span");
@@ -10,25 +6,16 @@ function takeInput(){
     //Variable
     let userMessage;
 
-    //API KEY of ChatGPT
-    const apiKey = Your_API_Key;
-    Your_API_Key = 123456789;
-    //Create Element Li
-    const createChatLi = (message, chatOutputArray) => {
+    const apiKey = "";
+
+    const createChatLi = (message, classes) => {
         const chatLi = document.createElement("li");
-
-        //Adding classes
-        if (chatOutputArray && Array.isArray(chatOutputArray)) {
-            chatOutputArray.forEach(chatName => {
-                chatLi.classList.add(chatName);
-            });
+        if (Array.isArray(classes)) {
+            classes.forEach(className => chatLi.classList.add(className));
         }
-        //Js connected to HTML
-        let chatContent = `<div>${message}</div>`;
-        chatLi.innerHTML = chatContent;
-
+        chatLi.innerHTML = `<div>${message}</div>`;
         return chatLi;
-    }
+    };
 
     //Function for getting response from ChatGPT
     const getResponse = (incomingChatLi) =>{
@@ -42,26 +29,24 @@ function takeInput(){
                 "Authorization": `Bearer ${apiKey}`
             },
             body: JSON.stringify({
-                model: "gpt-3.5-turbo",
-                messages: [{role: "user", content: userMessage}]
-            },)
-        }
+                model: "gpt-4",
+                messages: [{ role: "user", content: userMessage }],
+                max_tokens: 300,  // Increase to allow for longer responses
+                temperature: 0.7  // Adjust for response creativity (0.7 is moderately creative)
+            })
+        };
 
-        //Make Fetch Request to OPEN AI
-        fetch(apiUrl, getOption).then(res => res.json()).then(data =>{
-            console.log(data)
-            //Make the response into the box
+        fetch(apiUrl, getOption)
+            .then(res => res.json())
+            .then(data => {
             outputInBox.innerHTML = data.choices[0].message.content;
-        }).catch((error) => {
-            console.log(error)
-            //Make error message into the box
-            outputInBox.innerHTML = "Something went wrong!! Please try again.";
-        })
+            })
+            .catch(error => {
+                console.log(error);
+                outputInBox.innerHTML = "Something went wrong! Please try again.";
+            });
+    };
 
-    
-    }
-
-    //Chat Process
     const handleChat = () => {
         userMessage = chatInput.value.trim();
         if (!userMessage) return;
@@ -78,12 +63,28 @@ function takeInput(){
             chatbox.appendChild(incomingChatLi);
             //Get response
             getResponse(incomingChatLi);
-        }, 600) 
+        }, 600);
 
-        document.getElementById("output").value = "";
-    }
+        chatInput.value = "";
+    };
 
     //Event listener for click in button
     sendChatBtn.addEventListener("click", handleChat);
+}
 
+takeInput();
+
+
+function clearText() {
+    const messageBox = document.getElementById("message-box");
+    if (messageBox.value === "Write a message") {
+        messageBox.value = ""; // Clear the default text when clicked
+    }
+}
+
+function restoreText() {
+    const messageBox = document.getElementById("message-box");
+    if (messageBox.value === "") {
+        messageBox.value = "Write a message"; // Restore text if empty
+}
 }

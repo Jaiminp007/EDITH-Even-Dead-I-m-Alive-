@@ -153,7 +153,7 @@ span img{
 }
 
 .chat-incoming{
-  word-break: keep-all;
+  word-break: normal;
   height: fit-content;
   width: 350px; 
   border-radius: 15px;
@@ -172,22 +172,21 @@ span img{
 }
 
 .chat-outgoing{
-  word-break: keep-all;
+  display: block;
   height: fit-content;
   width: auto;
-  max-width: 450px; 
+  max-width: 500px; 
   border-radius: 15px; 
   padding: 15px; 
   background-color: #222831; 
-  margin-left: 300000px; 
-  margin-top: 50px; 
+  margin: 30px;
+  margin-left: 500px; 
+  margin-top: 30px; 
   margin-right: 30px; 
-  float: right; 
-  display:block;
+  float: right;
   font-size: 18px; 
   font-weight: 500; 
   color: #00ADB5; 
-  overflow:auto;
   z-index: 1;
 }
 
